@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = new mysqli("sql109.infinityfree.com", "if0_40150596", "Xnhu1XfzEkLNd8Y", "if0_40150596_grade_tracker");
+$conn = new mysqli("localhost", "root", "", "gradetracker");
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
@@ -143,3 +143,4 @@ $subjects = $stmt->get_result();
 </html>
 
 <?php $conn->close(); ?>
+
