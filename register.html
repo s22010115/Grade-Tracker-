@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grade Tracker - Register</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdfdfd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #6785f5;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .highlight-g {
+      position: relative;
+      padding-left: 35px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #6785f5;
+      margin-top: 10%;
+    }
+
+    .cap-icon-inside-g {
+      position: absolute;
+      left: 0;
+      width: 35px;
+      height: 35px;
+      margin-top: -2%;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-top: 20px;
+      font-weight: 500;
+      color: #444;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      margin-top: 8px;
+      font-size: 14px;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    .remember-forgot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .remember-forgot input {
+      margin-right: 5px;
+    }
+
+    .remember-forgot a {
+      color: #6785f5;
+      text-decoration: none;
+    }
+
+    .sign-up-btn {
+      width: 100%;
+      background-color: #6785f5;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 30px;
+      margin-top: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .sign-up-btn:hover {
+      background-color: #516fde;
+    }
+
+    .divider {
+      margin: 20px 0;
+      text-align: center;
+      color: #aaa;
+      font-size: 14px;
+      position: relative;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      position: absolute;
+      width: 40%;
+      height: 1px;
+      background-color: #ddd;
+      top: 50%;
+    }
+
+    .divider::before {
+      left: 0;
+    }
+
+    .divider::after {
+      right: 0;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 10px;
+    }
+
+    .social-icons img {
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 5px;
+      transition: 0.3s;
+    }
+
+    .social-icons img:hover {
+      background-color: #eee;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .dropdown-container {
+      position: relative;
+    }
+
+    #roleInput {
+      width: 100%;
+      padding: 12px 35px 12px 12px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+
+    .arrow-icon {
+      position: absolute;
+      right: 16px;
+      top: 60%;
+      transform: translateY(-50%);
+      pointer-events: auto;
+      cursor: pointer;
+    }
+
+    .dropdown-options {
+      display: none;
+      position: absolute;
+      top: 105%;
+      left: 0;
+      width: 100%;
+      border: 1px solid #ccc;
+      background: #fff;
+      border-radius: 6px;
+      z-index: 999;
+    }
+
+    .dropdown-options div {
+      padding: 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .dropdown-options div:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <span class="highlight-g">
+        <img src="logo.png" class="cap-icon-inside-g" alt="logo">
+        rade Tracker
+      </span>
+    </div>
+    <h2>REGISTER</h2>
+    <form id="registrationform" action="register_user.php" method="POST">
+      <label>Name</label>
+      <input type="text" name="name" placeholder="Name" required>
+
+      <label>Email</label>
+      <input type="email" name="email" placeholder="123@gmail.com" required>
+
+      <label>Phone Number</label>
+      <input type="text" name="phone" placeholder="phone" required>
+
+      <label>Password</label>
+      <input type="password" name="password" placeholder="********" required>
+
+      <label>Confirm Password</label>
+      <input type="password" name="confirm_password" placeholder="********" required>
+
+      <div class="form-group">
+        <label for="roleInput">Role</label>
+        <div class="dropdown-container">
+          <input type="text" id="roleInput" name="role" placeholder="Select Teacher / Student" readonly onclick="toggleDropdown()" required />
+          <svg class="arrow-icon" onclick="toggleDropdown()" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+          <div id="roleDropdown" class="dropdown-options">
+            <div onclick="selectRole('Teacher')">Teacher</div>
+            <div onclick="selectRole('Student')">Student</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="passwordError" style="color: #ff6b6b; background: #fff4f4; border-radius: 8px; padding: 10px; margin-top: 10px; display: none; font-size: 14px;"></div>
+
+      <button type="submit" class="sign-up-btn">Sign Up</button>
+
+    </form>
+  </div>
+
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById("roleDropdown");
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
+
+    function selectRole(role) {
+      document.getElementById("roleInput").value = role;
+      document.getElementById("roleDropdown").style.display = "none";
+    }
+
+    // Hide dropdown if clicked outside
+    document.addEventListener("click", function (event) {
+      const container = document.querySelector(".dropdown-container");
+      if (!container.contains(event.target)) {
+        document.getElementById("roleDropdown").style.display = "none";
+      }
+    });
+
+    document.getElementById("registrationform").addEventListener("submit", function(event) {
+      const password = document.querySelector('input[name="password"]').value;
+      const confirm = document.querySelector('input[name="confirm_password"]').value;
+      const errorDiv = document.getElementById("passwordError");
+      if (password !== confirm) {
+        event.preventDefault();
+        errorDiv.textContent = "Passwords do not match!";
+        errorDiv.style.display = "block";
+      } else {
+        errorDiv.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
+
+

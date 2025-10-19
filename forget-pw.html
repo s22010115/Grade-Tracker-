@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forgot Password</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdfdfd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      text-align: center;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-top: 20px;
+      font-weight: 500;
+      color: #444;
+    }
+
+    input[type="email"], input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      margin-top: 8px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .reset-btn {
+      width: 100%;
+      background-color: #6785f5;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 30px;
+      margin-top: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .reset-btn:hover {
+      background-color: #516fde;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Enter your Email/Username</h2>
+      <form method="POST" action="send-reset-link.php">
+        <label>Email or Username</label>
+        <input type="text" name="userInput" placeholder="Enter your email / username" required>
+        <button type="submit" class="reset-btn">Continue</button>
+      </form>
+  </div>
+</body>
+</html>
